@@ -19,3 +19,13 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.wallpaper{
+  background-image: url( '../public/image.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay{
+  background-color: rgba(0, 0, 0, 0.795);
+}
