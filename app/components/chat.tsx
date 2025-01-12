@@ -9,6 +9,7 @@ export default function Chat(){
     const [height, setheight] = useState<number>(50)
     const query = useRef<HTMLInputElement>(null)
     const {messages,setmessages} = useStore()
+    const scrollref = useRef<any>(null)
 
     //functions
     async function submitevent(){
@@ -23,11 +24,15 @@ export default function Chat(){
         }    
     }
 
-   
+    useEffect(()=>{
+        if(scrollref.current){
+            scrollref.current.scrollToBottom()
+        }
+    },[messages])
 
     return (
         <>
-        <Scrollbar  style={{width:"50vw"}} className="grow flex flex-col ">
+        <Scrollbar ref={scrollref} style={{width:"50vw"}} className="grow flex flex-col ">
                 {
                     messages.map((el,index)=>{
                         if(el.type == 'ai'){
