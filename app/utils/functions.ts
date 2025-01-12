@@ -1,7 +1,7 @@
 
 
 export async function ask_elon(query:string){
-    let response = fetch("http://127.0.0.1:5000", {
+    let response = fetch("http://localhost:3000/api/agent", {
         method:"POST", 
         headers:{
             'Content-Type':'application/json',
@@ -10,6 +10,6 @@ export async function ask_elon(query:string){
             question:query
         })
     })
-    let data:{reponse:string} = await response.then(res=>res.json())
+    let data:{response:string} = await response.then(res=>res.json())
     return data
 }

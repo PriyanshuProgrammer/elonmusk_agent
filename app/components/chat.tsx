@@ -20,7 +20,7 @@ export default function Chat(){
         if(value?.trim()){
             setmessages({type:"user", message:value})
             const response = await ask_elon(value)
-            setmessages({type:"ai", message:response.reponse})
+            setmessages({type:"ai", message:response.response})
         }    
     }
 
