@@ -9,7 +9,7 @@ export default function Chat(){
     const [height, setheight] = useState<number>(50)
     const query = useRef<HTMLInputElement>(null)
     const {messages,setmessages} = useStore()
-    const scrollref = useRef(null)
+    const scrollref = useRef<any>(null)
 
     //functions
     async function submitevent(){
