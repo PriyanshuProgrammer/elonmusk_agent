@@ -1,7 +1,7 @@
 
 
 export async function ask_elon(query:string){
-    let response = fetch("http://localhost:3000/api/agent", {
+    let response = fetch("/api/agent", {
         method:"POST", 
         headers:{
             'Content-Type':'application/json',
